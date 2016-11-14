@@ -5,13 +5,13 @@
 }
 
 .footer-icon:hover {
-  color:yellow;
+  color:$yellow;
   transition: 0.5s;
 }
 
 .wrapper-footer {
-  color:#CCCCCC;
-  background-color: #333333;
+  color: $grey;
+  background-color: $darkgrey;
   background-size: cover;
   padding: 20px 0;
 }
