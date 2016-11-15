@@ -54,20 +54,21 @@ title: Le Wagon Middleman boilerplate
   <div class="container">
     <h2 class="text-center">Your next trip</h2>
     <div class="row">
+      <% data.flats.each do |owner, flat| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
-          <div class="card-category">Paris, France</div>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path flat.picture %>');">
+          <div class="card-category"><%= flat.city %></div>
           <div class="card-description">
-            <h2>Sebastien's home</h2>
-            <p>Charming room in Montmartre</p>
+            <h2><%= flat.name %></h2>
+            <p><%= flat.summary %></p>
           </div>
-          <img class="card-user avatar avatar-large" src="images/seb.jpg" />
-          <a class="card-link" href="flats/seb.html"></a>
-
+          <%= image_tag flat.owner_picture, class:"card-user avatar avatar-large" %>
+          <%= link_to "#", "flats/#{owner}.html", class: "card-link" %>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
+      <% end %>
+      <!-- <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
           <div class="card-category">Brussels, Belgium</div>
           <div class="card-description">
             <h2>Anne's home</h2>
@@ -78,7 +79,7 @@ title: Le Wagon Middleman boilerplate
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
           <div class="card-category">London, UK</div>
           <div class="card-description">
             <h2>Romain's home</h2>
@@ -86,7 +87,7 @@ title: Le Wagon Middleman boilerplate
           </div>
           <img class="card-user avatar avatar-large" src="images/romain.jpg" />
           <a class="card-link" href="flats/romain.html"></a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
